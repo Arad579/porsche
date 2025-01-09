@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Shoping from "./Shoping";
 import Models from "./Models";
+import YourPorche from "./YourPorche";
+import FindYour from "./FindYour";
 
 export default function Menu({ setToggleMenu }) {
 
@@ -20,7 +22,7 @@ export default function Menu({ setToggleMenu }) {
       switch (cat) {
         case Models:
             return <Models />
-      
+
         default:
           break;
       }
@@ -61,7 +63,7 @@ export default function Menu({ setToggleMenu }) {
         ))}
       </div>
       <div className="bg-gray-200 w-[50%] h-full overflow-scroll">
-        {handleShow(category)}
+        <FindYour />
       </div>
       <div
         className="p-4 text-2xl rounded-lg hover:bg-gray-200 w-10 h-10 flex justify-center items-center m-4"
