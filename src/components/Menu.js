@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Shoping from "./Shoping";
 import Models from "./Models";
+import Exprinec from "./Exprinec"
+import Service from "./Service"
 import YourPorche from "./YourPorche";
 import FindYour from "./FindYour";
 
@@ -18,20 +20,25 @@ export default function Menu({ setToggleMenu }) {
     "My Porsche",
   ];
 
-  const handleShow = (cat) => {
-      switch (cat) {
-        case Models:
+  const handleShow = () => {
+      switch (categoryShow) {
+        case "Models":
             return <Models />
-
+          case "ShoppingTools":
+              return <Shoping />
+          case "Porsche Shop":
+              return <div>porsche shop</div>
+          case "Services":
+              return <Service />
+          case "Experience":
+              return <Exprinec />
+          case "Find Your Porsche Center":
+              return <FindYour />
+          case "My Porsche":
+              return <YourPorche />
         default:
-          break;
+            return <Models />
       }
-  }
-
-  const handleClickCategory = (model) => {
-    // Debugging log
-    console.log(model);
-    setCategoryShow(model)
   }
 
   const menuRef = React.useRef(null);
@@ -55,7 +62,7 @@ export default function Menu({ setToggleMenu }) {
           <div
             key={index} // Add a unique key
             onClick={() =>{
-              handleClickCategory(model)}}
+              setCategoryShow(model)}}
             className="hover:bg-gray-200 w-[80%]"
           >
             {model}
@@ -63,7 +70,7 @@ export default function Menu({ setToggleMenu }) {
         ))}
       </div>
       <div className="bg-gray-200 w-[50%] h-full overflow-scroll">
-        <FindYour />
+          {handleShow()}
       </div>
       <div
         className="p-4 text-2xl rounded-lg hover:bg-gray-200 w-10 h-10 flex justify-center items-center m-4"
