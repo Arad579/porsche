@@ -3,7 +3,7 @@ import posche from '../images/porsche-model.png'
 
 function PorscheHome() {
   return (
-<div className="flex flex-col justify-center items-center mt-20">
+<div className="flex flex-col justify-center items-center my-20">
     <h1 className="text-5xl">911 gt3 rs</h1>
     <div className="w-full flex justify-center"><img alt="true" className="w-[50%]" src={posche}/></div>
     <div>
@@ -19,7 +19,7 @@ function PorscheHome() {
 
         })}
     </div>
-</div> 
+</div>
   )
 }
 

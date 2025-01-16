@@ -36,8 +36,6 @@ export default function Menu({ setToggleMenu }) {
               return <FindYour />
           case "My Porsche":
               return <YourPorche />
-        default:
-            return <Models />
       }
   }
 
